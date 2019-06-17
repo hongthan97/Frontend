@@ -1,0 +1,46 @@
+.highlight_block {
+    position: relative;
+    padding: 175px 0;
+    background-image: url('../images/adaptis-vicostone.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    @include background-size(cover);
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.5);
+    }
+    .content {
+        position: relative;
+        @include flexbox();
+        @include align-items(center);
+        p {
+            color: $text-color-secondary;
+            font-weight: 500;
+            width: 70%;
+            text-align: right;
+            padding: 0 5%;
+            line-height: 1.6;
+        }
+    }
+}
+
+@media only screen and (max-width: breakpoints(smminus)) {
+    .highlight_block .content {
+        @include flex-direction(column);
+    }
+    .highlight_block .content p {
+        width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 13px;
+    }
+    .highlight_block .content .btn-adaptis {
+        font-size: 9px;
+    }
+}

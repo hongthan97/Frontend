@@ -1,0 +1,152 @@
+.relative_block {
+    background: color(c-white);
+    padding: 60px 0;
+    .content {
+        margin: 0 6px;
+    }
+    .content-details {
+        margin: 0 -12px 36px;
+        .image {
+            height: 220px;
+            position: relative;
+            background-repeat: no-repeat;
+            background-position: center;
+            @include background-size(cover);
+            &.image-1 {
+                background-image: url('../images/adaptis-credentials.jpg');
+            }
+            &.image-2 {
+                background-image: url('../images/adaptis-careers-bg.jpg');
+            }
+            &.image-3 {
+                background-image: url('../images/adaptis-contact-us.png');
+            }
+            a {
+                display: block;
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    content: '';
+                    background: color(c-black-opacity);
+                    opacity: 0;
+                    @include transition(all .3s ease-in-out);
+                }
+                p {
+                    position: absolute;
+                    opacity: 0;
+                    z-index: 9;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: color(c-white);
+                    top: 50%;
+                    left: 50%;
+                    @include transition(all .3s ease-in-out);
+                    @include transform(translate(-50%,-50%));
+                    &.special {
+                        top: 45%;
+                    }
+                }
+                &.room {
+                    &:after {
+                        @include transform(scale(0.75));
+                    }
+                }
+                &:hover {
+                    &:after,
+                    p {
+                        opacity: 1;
+                    }
+                    .special {
+                        top: 50%;
+                    }
+                    &.room {
+                        &:after {
+                            @include transform(scale(1));
+                        }
+                    }
+                }
+            }
+        }
+        .title {
+            a {
+                font-size: 21px;
+                color: color(c-violet-4);
+                position: relative;
+                margin: 40px 0 22px;
+                display: inline-block;
+                padding-bottom: 7px;
+                &:after {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 1px;
+                    background: color(c-violet-4);
+                    @include transition(.3s ease-in-out);
+                }
+                &:hover {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .text {
+            font-size: 14px;
+            color: color(c-violet-4);
+            line-height: 1.6;
+            height: 115px;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+        .link {
+            font-size: 12px;
+            font-weight: 600;
+            position: relative;
+            color: color(c-violet-4);
+            padding-right: 21px;
+            display: inline-block;
+            margin-top: 12px;
+            &:after {
+                position: absolute;
+                content: "→";
+                right: 5px;
+                top: 0;
+                opacity: 0;
+                @include transition(all .2s ease-in-out);
+            }
+            &:hover {
+                &:after {
+                    opacity: 1;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: breakpoints(smminus)) {
+    .relative_block .content {
+        margin: 0;
+    }
+    .relative_block .content-details {
+        margin: 0 0 33px;
+    }
+    .relative_block .content-details .title a {
+        font-size: 16px;
+        margin: 27px 0 11px;
+    }
+    .relative_block .content-details .text {
+        font-size: 12px;
+        height: auto;
+    }
+    .relative_block .content-details .link {
+        font-size: 10px;
+        margin-top: 0;
+    }
+}

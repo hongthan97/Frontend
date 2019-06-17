@@ -1,0 +1,22 @@
+extends ../layouts/master.pug
+
+block title
+  title UX and Digital Agency with locations in Vietnam, Switzerland, Australia, and Thailand | Adaptis
+
+block basicSeo
+  meta(name='description' content='home page')
+  meta(name='keywords', content='home, page')
+  meta(name='author' content='')
+
+block content
+  //- Desktop page
+  include ../components/slider/slider.pug
+  include ../components/introduction_1/introduction_1.pug
+  include ../components/introduction_3/introduction_3.pug
+  include ../components/introduction_2/introduction_2.pug
+  include ../components/highlight_block/highlight_block.pug
+  include ../components/solution/solution.pug
+  include ../components/clients/clients.pug
+  include ../components/relative_block/relative_block.pug
+  
+  

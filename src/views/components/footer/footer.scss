@@ -1,0 +1,113 @@
+.footer-general {
+    padding: 57px 0 35px;
+    text-align: center;
+    background-image: url('../images/background-footer.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+    a,
+    p {
+        color: $text-color-secondary;
+    }
+    .logo {
+        a {
+            font-size: 20px;
+            letter-spacing: 12px;
+            @include transition(all .3s);
+            &:hover {
+                @include animation(shine 2s);
+                mask-image: linear-gradient(-75deg,rgba(0,0,0,.6) 30%,#000 50%,rgba(0,0,0,.6) 70%);
+                -webkit-mask-image: linear-gradient(-75deg,rgba(0,0,0,.6) 30%,#000 50%,rgba(0,0,0,.6) 70%);
+                mask-size: 200%;
+                -webkit-mask-size: 200%;
+            }
+        }
+    }
+    .footer-menu {
+        margin-top: 39px;
+        li {
+            padding-bottom: 11px;
+            &.current {
+                a {
+                    color: #9f57ae;
+                }
+            }
+        }
+        a {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            cursor: pointer;
+            &:hover {
+                color: #9f57ae;
+            }
+        }
+    }
+    .footer-items {
+        font-weight: 500;
+        .location {
+            letter-spacing: 8px;
+            font-size: 12px;
+        }
+        .phone {
+            margin: 22px 0 10px;
+            a {
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+        .email {
+            a {
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+        .clock {
+            img {
+                max-width: 100%;
+                width: 71px;
+                height: 71px;
+                margin: 82px auto 40px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: breakpoints(smminus)) {
+    .footer-general {
+        padding-bottom: 0;
+    }
+    .footer-general .logo a {
+        font-size: 15px;
+    }
+    .footer-general .footer-menu {
+        margin: 34px 0 28px;
+    }
+    .footer-general .footer-menu a {
+        font-size: 10px;
+    }
+    .footer-general .footer-menu li {
+        padding-bottom: 6px;
+    }
+    .footer-general .footer-items {
+        padding: 50px 0 20px;
+    }
+    .footer-general .footer-items .clock {
+        display: none;
+    }
+    .footer-general .footer-items .location {
+        font-size: 10px;
+    }
+    .footer-general .footer-items .phone {
+        margin: 15px 0 4px;
+    }
+    .footer-general .footer-items .phone a,
+    .footer-general .footer-items .email a {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: breakpoints(xxs)) {
+    .footer-general .footer-items .location {
+        letter-spacing: 3px;
+    }
+}

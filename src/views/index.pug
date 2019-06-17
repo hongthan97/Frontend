@@ -1,0 +1,16 @@
+//- extends ./layouts/master.pug
+
+block title
+  title Adaptis
+
+block content
+  - var pages = { Homepage: '/homepage', TheWork: '/the_work' , TheAgency: '/the_agency', Contact: '/contact' }
+
+  //- Desktop page
+  section.page.home__page
+    h1.page__title Navigation
+
+    ul(style="list-style: disc; padding-left: 4rem; margin: 4rem 0")
+      each val, index in pages
+        li
+          a(href=val)= index

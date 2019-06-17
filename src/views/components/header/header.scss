@@ -1,0 +1,184 @@
+.header-general {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .logo {
+        margin-top: 33px;
+        margin-left: 40px;
+        position: absolute;
+        z-index: 999;
+        a {
+            font-size: 16px;
+            color: $text-color-secondary;
+            letter-spacing: 24px;
+            @include transition(all .25s);
+            &:hover {
+                @include animation(shine 2s);
+                mask-image: linear-gradient(-75deg,rgba(0,0,0,.6) 30%,#000 50%,rgba(0,0,0,.6) 70%);
+                -webkit-mask-image: linear-gradient(-75deg,rgba(0,0,0,.6) 30%,#000 50%,rgba(0,0,0,.6) 70%);
+                mask-size: 200%;
+                -webkit-mask-size: 200%;
+            }
+        }
+    }
+    .main-menu {
+        nav,
+        .hamburger {
+            background: rgba(60,33,58,.9); 
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 99;
+        }
+        ul {
+            display: none;
+            padding: 0 120px 0 40px;
+            .menu-item {
+                display: inline-block;
+                margin: 0 15px;
+                &:first-child {
+                    display: none;
+                }
+                &.current {
+                    position: relative;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        height: 2px;
+                        background: $text-color-secondary;
+                        width: 100%;
+                        @include transition(width .5s ease-in-out);
+                    }
+                }
+                a {
+                    text-transform: uppercase;
+                    color: $text-color-secondary;
+                    font-size: 13px;
+                    font-weight: fontWeight(medium);
+                    letter-spacing: 1px;
+                    padding: 33px 0;
+                    display: block;
+                    position: relative;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        height: 2px;
+                        background: $text-color-secondary;
+                        width: 0%;
+                        @include transition(width .5s ease-in-out);
+                    }
+                    &:hover {
+                        &:after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .hamburger {
+            border: none;
+            .hamburger-box {
+                position: relative;
+                display: inline-block;
+                width: 30px;
+                height: 20px;
+                background: none;
+                border: none;
+                margin: 37px 19px 17px;
+                cursor: pointer;
+                .hamburger-inner {
+                    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                    transition-duration: .3s;
+                    position: absolute;
+                    width: 30px;
+                    height: 2px;
+                    @include border-radius(2px);
+                    background: $text-color-secondary;
+                    display: block;
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        width: 30px;
+                        height: 2px;
+                        @include border-radius(2px);
+                        background: $text-color-secondary;
+                        display: block;
+                    }
+                    &:before {
+                        top: -10px;
+                    }
+                    &:after {
+                        top: 10px;
+                    }
+                }
+            }
+            &.menu_active {
+                background: none;
+                .hamburger-inner {
+                    @include transform(rotate(225deg));
+                    transition-delay: 0.14s;
+                    transition-timing-function: cubic-bezier(0.215, 0.61, 0.315, 1);
+                    &:before {
+                        top: 0;
+                        opacity: 0;
+                        @include transition((top 0.1s ease-out, opacity 0.1s ease-out 0.14s));
+                    }
+                    &:after {
+                        top: 0;
+                        bottom: 0;
+                        @include transition((bottom 0.1s ease-out, transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0.14s));
+                        @include transform(rotate(-90deg));
+                    }
+                }
+            }
+        }
+    }
+    &.fixed {
+        .main-menu {
+            nav,
+            .hamburger {
+                position: fixed;
+                top: 0;
+                z-index: 99999;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: breakpoints(md)) {
+    .header-general .logo {
+        margin-top: 25px;
+        margin-left: 15px;
+    }
+    .header-general .logo a {
+        letter-spacing: 12px;
+    }
+}
+@media only screen and (min-width: breakpoints(sm)) and (max-width: breakpoints(md)) {
+    .header-general .main-menu ul {
+        padding: 0 100px 0 20px;
+    }
+}
+@media only screen and (max-width: breakpoints(smminus)) {
+    .header-general .main-menu nav {
+        width: 100%;
+    }
+    .header-general .main-menu nav ul {
+        text-align: center;
+        padding: 0;
+        min-height: 100vh;
+    }
+    .header-general .main-menu nav ul .menu-item {
+        display: block;
+        margin: 0;
+    }
+    .header-general.fixed .main-menu nav ul .menu-item:first-child {
+        display: block;
+    }
+}

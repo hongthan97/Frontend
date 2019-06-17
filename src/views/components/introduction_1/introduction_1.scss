@@ -1,0 +1,57 @@
+.introduction_1 {
+    padding-top: 100px;
+    .container {
+        max-width: 960px;
+        .content {
+            padding-left: 10%;
+        }
+        .title {
+            text-align: right;
+        }
+        .content-detail {
+            padding: 0 0 50px 50%;
+        }
+        .highlight_1 {
+            font-size: 19px;
+            color: color(c-violet-4);
+            margin: 32px 0 4px;
+        }
+        .highlight_2 {
+            font-size: 19px;
+            color: color(c-violet-5);
+        }
+        .normal {
+            line-height: 1.6;
+            margin: 30px 0 29px;
+        }
+        .btn-adaptis-black {
+            display: inline-block;
+        }
+    }
+}
+
+@media only screen and (max-width: breakpoints(smminus)) {
+    .introduction_1 {
+        padding-top: 50px;
+    }
+    .introduction_1 .title-first {
+        font-size: 18px;
+    } 
+    .introduction_1 .title-second {
+        font-size: 29px;
+    }
+    .introduction_1 .container .content {
+        padding: 0 5%;
+    }
+    .introduction_1 .container .content .content-detail {
+        padding-left: 5%;
+    }
+    .introduction_1 .container .normal,
+    .introduction_1 .container .highlight_1,
+    .introduction_1 .container .highlight_2 {
+        font-size: 13px;
+    }
+    .introduction_1 .container .btn-adaptis-black {
+        font-size: 9px;
+    }
+}

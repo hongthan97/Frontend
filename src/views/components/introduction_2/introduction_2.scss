@@ -1,0 +1,81 @@
+.introduction_2 {
+    padding-bottom: 160px;
+    .container {
+        max-width: 960px;
+    }
+    .content {
+        @include flexbox();
+        @include justify-content(space-between);
+    }
+    .content-left {
+        padding-right: 10%;
+        width: 50%;
+        .title {
+            padding-bottom: 30px;
+        }
+        .content-detail {
+            line-height: 1.6;
+            p {
+                padding-bottom: 30px;
+            }
+        }
+    }
+    .content-right {
+        .image {
+            position: relative;
+            height: 550px;
+        }
+        .btn-adaptis-black {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border: 1px solid color(c-white);
+            background: color(c-white);
+            z-index: 9;
+        }
+    }
+}
+@media only screen and (max-width: breakpoints(smminus)) {
+    .introduction_2 {
+        padding-bottom: 50px;
+    }
+    .introduction_2 .title-first {
+        font-size: 18px;
+    }
+    .introduction_2 .title-second {
+        font-size: 26px;
+    }
+    .introduction_2 .content {
+        @include flex-direction(column);
+    }
+    .introduction_2 .content .content-right {
+        margin-bottom: 30px;
+        height: 95px;;
+        background-image: url('../images/bgd-solvers.png');
+        background-position: center;
+        @include background-size(cover);
+        @include order(1);
+    }
+    .introduction_2 .content .content-right .image {
+        height: 95px;
+    }
+    .introduction_2 .content .content-right img {
+        display: none;
+    }
+    .introduction_2 .content .content-right .btn-adaptis-black {
+        width: 50%;
+        text-align: center;
+        font-size: 9px;
+    }
+    .introduction_2 .content .content-left{
+        padding: 0 5%;
+        width: 100%;
+        @include order(2);
+    }
+    .introduction_2 .content-left .content-detail {
+        padding-left: 5%;
+    }
+    .introduction_2 .content-left .content-detail p {
+        font-size: 13px;
+    }
+}

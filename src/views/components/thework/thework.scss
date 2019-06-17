@@ -1,0 +1,168 @@
+section.a-thework {
+    padding: 157px 0 120px;
+    .container.box-thework {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        position: relative;
+        span.thework-title {
+            width: 100%;
+            display: flex;
+        }
+    }
+    .a-section-title {
+        font-size: 2.25em;
+        line-height: 1.25em;
+        margin-bottom: 28px;
+        font-weight: 300;
+        span.thework-title {
+            font-family: 'CapitoliumW01-2Regular',sans-serif;
+            line-height: 26px;
+            font-size: 26px;
+            color: #6E6E6E;
+        }
+        span.thinking {
+            font-family: 'CapitoliumW01-2Regular',sans-serif;
+            font-size: 42px;
+            line-height: 52.5px;
+        }
+    }
+    p.content-thework {
+        width: 50%;
+        line-height: 25.6px;
+        font-weight: 400;
+        color: #393939;
+    }
+}
+
+.row.thework-items{
+    margin: 100px 0px 0px;
+}
+.col-item{
+    padding: 0px;
+    .link-item{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        cursor: pointer;
+        height: 390px;
+        img.img-thework{
+            width: 100%;
+            @include transition(all .3s ease-in-out);   
+        }
+        .item-box{
+            padding: 35px 40px 25px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: left;
+            z-index: 9;
+            color: $text-color-secondary;
+            p.nationalBrand{
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+                @include transition(transform 0.35s);
+                @include transform(translate(0,100%));
+                font-size: 19px;
+                span{
+                    width: 100%;
+                    color: $text-color-secondary;
+                    text-transform: uppercase;
+                    &:first-child {
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+            p.content-item-box{
+               color: $text-color-secondary;
+                font-weight: 500;
+                font-size: 12px;
+                letter-spacing: 1px;
+                line-height: 18px;
+                height: 60px;
+                opacity: 0;
+                transition: opacity 0.2s, transform 0.35s;
+            }
+        }
+    }
+}
+.link-item .item-box p.nationalBrand,
+.link-item .item-box p.content-item-box{
+    transform: translate3d(0,40px,0);
+}
+.col-item .link-item:hover img.img-thework{
+    transform: scale(1.2);
+}
+.link-item:hover img.img-thework,
+.link-item:hover .item-box p.content-item-box{
+    opacity: 1;
+}
+.link-item:hover img.img-thework,
+.link-item:hover .item-box p.nationalBrand,
+.link-item:hover .item-box p.content-item-box{
+    transform: translate3d(0,0,0);
+}
+.link-item:hover .item-box p.content-item-box{
+    transition-duration: 0.35s;
+    transition-delay: 0.05s;
+}
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    top: 0;
+    left: 0;
+    color: $text-color-secondary;
+}
+/*media responsive*/
+@media only screen and (max-width: breakpoints(xlminus)) {
+    .col-item .link-item {
+        height: auto;
+    }
+    .col-item .link-item img.img-thework {
+        height: 100%;
+    }
+}
+@media only screen and (max-width: breakpoints(mdminus)) 
+{
+    .row.thework-items{
+        margin-top: 50px;
+    }
+    section.a-thework p.content-thework {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: breakpoints(smminus))
+{
+    section.a-thework .container.box-thework span.thework-title{
+        font-size: 18px;
+        line-height: 18px;
+    }
+    section.a-thework .a-section-title span.thinking{
+        font-size: 29px;
+        line-height: 36px;
+    }
+    section.a-thework .a-section-title{
+        margin-bottom: 20px;
+    }
+    section.a-thework p.content-thework{
+        line-height: 21px;
+        font-size: 13px;
+        font-weight: 400;
+    }
+    section.a-thework {
+        padding-bottom: 60px;
+    }
+    .col-item .link-item .item-box p.nationalBrand {
+        font-size: 15px;
+        @include transform(translate(0,0));
+    }
+    .link-item .item-box p.content-item-box {
+        display: none;
+    }
+
+}

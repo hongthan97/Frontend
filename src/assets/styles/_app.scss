@@ -1,0 +1,32 @@
+/*
+  EN font
+*/
+@import './base/font-language/en-EN';
+@import './base/_functions';
+@import './base/_variables';
+@import './base/_mixins';
+@import './base/_fonts';
+@import './base/_global';
+@import './base/_flexboxgrid';
+@import './base/_lazyload';
+@import './base/_animate';
+@import '../../../node_modules/slick-carousel/slick/slick-theme.scss';
+@import '../../../node_modules/slick-carousel/slick/slick.css';
+
+
+// Component
+@import '../../views/components/header/header';
+@import '../../views/components/footer/footer';
+@import '../../views/components/introduction_1/introduction_1';
+@import '../../views/components/introduction_2/introduction_2';
+@import '../../views/components/introduction_3/introduction_3';
+@import '../../views/components/highlight_block/highlight_block';
+@import '../../views/components/clients/clients';
+@import '../../views/components/solution/solution';
+@import '../../views/components/relative_block/relative_block';
+@import '../../views/components/slider/slider';
+@import '../../views/components/the_work_my/the_work_my';
+@import '../../views/components/thework/thework.scss';
+@import '../../views/components/agency/agency';
+@import '../../views/components/contact/contact';
+@import '../../views/components/highlight/highlight';

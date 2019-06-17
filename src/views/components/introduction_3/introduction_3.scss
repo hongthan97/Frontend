@@ -1,0 +1,104 @@
+.introduction_3 {
+    padding: 107px 0 150px 5px;
+    .container-special {
+        max-width: 960px;
+        position: relative;
+    }
+    .content {
+        width: 110%;
+        @include flexbox();
+    }
+    .background-image {
+        width: 335px;
+        height: 300px;
+        img {
+            height: 100%;
+        }
+    }
+    .content-details {
+        background: color(c-39);
+        position: relative;
+        padding: 30px;
+        width: 65.2%;
+        p {
+            color: color(c-white);
+        }
+        .subtitle {
+            padding: 5px 0 4px;
+        }
+        .title {
+            font-size: 23px;
+            padding-bottom: 22px;
+        }
+        .text {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .btn-adaptis-black {
+            position: absolute;
+            bottom: 10%;
+            right: -50px;
+            background: color(c-white);
+        }
+    } 
+    .ballon-bgd {
+        position: absolute;
+        top: -65px;
+        z-index: 9;
+        left: 9%;
+        @include transform(rotate(5deg));
+        @include animation(ballon 8s ease-in-out infinite);
+    }
+}
+@media only screen and (max-width: breakpoints(xlminus)) {
+    .introduction_3 {
+        padding-left: 0;
+    }
+    .introduction_3 .container-special {
+        padding: 0 15px;;
+    }
+    .introduction_3 .content-details .btn-adaptis-black {
+        position: relative;
+        display: inline-block;
+        margin-top: 30px;
+        right: 0;
+    }
+}
+@media only screen and (min-width: breakpoints(sm)) and (max-width: breakpoints(xlminus)) {
+    .introduction_3 .content {
+        width: 90%;
+    }
+    .introduction_3 .content-details {
+        width: 49%;
+    }
+}
+@media only screen and (max-width: breakpoints(smminus)) {
+    .introduction_3 .content {
+        width: 100%;
+        @include flex-direction(column);
+    }
+    .introduction_3 .background-image,
+    .introduction_3 .background-image img,
+    .introduction_3 .content-details {
+        width: 100%;
+    }
+    .introduction_3 .content-details .subtitle {
+        font-size: 13px;
+    }
+    .introduction_3 .content-details .title {
+        font-size: 18px;
+    }
+    .introduction_3 .content-details .text {
+        font-size: 12px;
+    }
+    .introduction_3 .content-details .btn-adaptis-black {
+        font-size: 9px;
+    }
+    .introduction_3 .ballon-bgd {
+        left: calc(50% - 70px);
+    }
+    .introduction_3 .ballon-bgd img {
+        width: 141px;
+        height: 350px;
+    }
+}
